@@ -14,8 +14,16 @@ This is a setup script to automate the setup and provisioning of Ubuntu servers.
 # Installation
 SSH into your server and install git if it is not installed:
 ```bash
-sudo apt-get update
-sudo apt-get install git
+apt-get update
+apt-get install git -y
+```
+
+grab script from git
+```bash
+cd ~
+git clone https://github.com/HendrikHaase/ubuntu-server-setup.git
+cd ubuntu-server-setup
+bash ./setup.sh
 ```
 
 Clone this repository into your home directory:
