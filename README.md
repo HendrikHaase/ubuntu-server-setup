@@ -1,7 +1,7 @@
 # Bash setup script for Ubuntu servers
 
 This is a setup script to automate the setup and provisioning of Ubuntu servers. It does the following:
-* Adds a new user account with sudo+lxc access (+adds lxc group)
+* Adds a new user account with sudo+lxd access (+adds lxd group)
 * Deny root login to the server
 * Setup Uncomplicated Firewall
 * Create Swap file based on machine's installed memory

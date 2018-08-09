@@ -25,7 +25,7 @@ function main() {
     # Run setup functions
     trap cleanup EXIT SIGHUP SIGINT SIGTERM
 
-    sudo addgroup lxc
+    sudo addgroup lxd
     addUserAccount "${username}" "${password}"
 
     echo 'Running setup script...'
@@ -49,6 +49,8 @@ function main() {
     cleanup
 
     echo "Setup Done! Log file is located at ${output_file}" >&3
+
+    echo "type exit and hit enter"
 }
 
 function setupSwap() {
