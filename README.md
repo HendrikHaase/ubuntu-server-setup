@@ -18,14 +18,6 @@ apt-get update
 apt-get install git -y
 ```
 
-grab script from git
-```bash
-cd ~
-git clone https://github.com/HendrikHaase/ubuntu-server-setup.git
-cd ubuntu-server-setup
-bash ./setup.sh
-```
-
 Clone this repository into your home directory:
 ```bash
 cd ~
