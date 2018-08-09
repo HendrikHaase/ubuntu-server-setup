@@ -18,7 +18,7 @@ function addUserAccount() {
 
     echo "${username}:${password}" | sudo chpasswd
     sudo usermod -aG sudo "${username}"
-    sudo usermod -aG lxc "${username}"
+    sudo usermod -aG lxd "${username}"
 }
 
 # Add the local machine public SSH Key for the new user account
