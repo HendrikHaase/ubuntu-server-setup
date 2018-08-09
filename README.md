@@ -11,8 +11,8 @@ This is a setup script to automate the setup and provisioning of Ubuntu servers.
 # Installation
 SSH into your server and install git if it is not installed:
 ```bash
-apt-get update
-apt-get install git -y
+apt update
+apt install git lxc -y
 ```
 
 Clone this repository into your home directory:
