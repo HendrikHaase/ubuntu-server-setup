@@ -9,10 +9,10 @@ This is a setup script to automate the setup and provisioning of Ubuntu servers.
 * Install Network Time Protocol
 
 # Installation
-SSH into your server and install git if it is not installed:
+SSH into your server and install git + lxd if it is not installed:
 ```bash
 apt update
-apt install git lxc -y
+apt install git lxd lxd-client -y
 ```
 
 Clone this repository into your home directory:
