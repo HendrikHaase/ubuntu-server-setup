@@ -25,7 +25,14 @@ function main() {
     # Run setup functions
     trap cleanup EXIT SIGHUP SIGINT SIGTERM
 
-    sudo addgroup lxd
+    if grep -q lxd /etc/group
+    then
+         echo "group lxd exists"
+    else
+         echo "group lxd does not exist, adding"
+         sudo addgroup lxd
+    fi
+
     addUserAccount "${username}" "${password}"
 
     echo 'Running setup script...'
