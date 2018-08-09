@@ -18,6 +18,7 @@ function addUserAccount() {
 
     echo "${username}:${password}" | sudo chpasswd
     sudo usermod -aG sudo "${username}"
+    sudo usermod -aG lxc "${username}"
 }
 
 # Add the local machine public SSH Key for the new user account
@@ -47,7 +48,6 @@ function execAsUser() {
 # Modify the sshd_config file
 # shellcheck disable=2116
 function changeSSHConfig() {
-    sudo sed -re 's/^(\#?)(PasswordAuthentication)([[:space:]]+)yes/\2\3no/' -i."$(echo 'old')" /etc/ssh/sshd_config
     sudo sed -re 's/^(\#?)(PermitRootLogin)([[:space:]]+)(.*)/PermitRootLogin no/' -i /etc/ssh/sshd_config
 }
 
@@ -128,16 +128,6 @@ function getPhysicalMemory() {
     else
         echo "${phymem}"
     fi
-}
-
-# Disables the sudo password prompt for a user account by editing /etc/sudoers
-# Arguments:
-#   Account username
-function disableSudoPassword() {
-    local username="${1}"
-
-    sudo cp /etc/sudoers /etc/sudoers.bak
-    sudo bash -c "echo '${1} ALL=(ALL) NOPASSWD: ALL' | (EDITOR='tee -a' visudo)"
 }
 
 # Reverts the original /etc/sudoers file before this script is ran
