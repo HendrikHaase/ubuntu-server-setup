@@ -57,10 +57,8 @@ function main() {
 
     echo "Setup Done! Log file is located at ${output_file}" >&3
 
-    echo "init lxd"  >&3
-    sudo lxd init
-
-    echo "type exit and hit enter"
+    echo "type exit and hit enter"  >&3
+    echo "you may wanna run: sudo lxd init" >&3
 }
 
 function setupSwap() {
