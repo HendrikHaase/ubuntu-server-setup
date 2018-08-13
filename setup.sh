@@ -53,6 +53,9 @@ function main() {
 
     sudo service ssh restart
 
+    echo "init lxd"
+    sudo lxd init
+
     cleanup
 
     echo "Setup Done! Log file is located at ${output_file}" >&3
